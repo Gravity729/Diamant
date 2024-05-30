@@ -1,0 +1,83 @@
+﻿<Window x:Class="Diamant.View.NewClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diamant.View"
+        mc:Ignorable="d"
+        Title="Алмаз" Height="450" Width="800" WindowStartupLocation="CenterScreen" Background="White" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#232937"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" >
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,5"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FF374054"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="Hidden" >
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="40*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50*"/>
+                <ColumnDefinition Width="70*"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+                <Label Content="Добавление клиента" VerticalAlignment="Center" 
+           Width="Auto" 
+           Height="55" FontSize="24" HorizontalContentAlignment="Center"  
+           VerticalContentAlignment="Center" Foreground="White" >
+                    <Label.Background>
+                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                            <GradientStop Color="#FFEF4961"/>
+                            <GradientStop Color="#FFEC7E65" Offset="0.736"/>
+                        </LinearGradientBrush>
+                    </Label.Background>
+                </Label>
+            </StackPanel>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Фамилия:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="13"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Имя:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="13"/>
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Отчество:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="13"/>
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Дата рождения:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="13"/>
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Номер телефона:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="13"/>
+            <TextBlock Grid.Row="6" Grid.Column="0" Text="Серия паспорта:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="13"/>
+            <TextBlock Grid.Row="7" Grid.Column="0" Text="Номер паспорта:" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="5" FontSize="13"/>
+
+            <TextBox x:Name="LName" Grid.Row="1" Grid.Column="1" Height="25" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Padding="0, 2, 0, 0" FontSize="13"/>
+            <TextBox x:Name="FName" Grid.Row="2" Grid.Column="1" Height="25" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Padding="0, 2, 0, 0" FontSize="13"/>
+            <TextBox x:Name="PName" Grid.Row="3" Grid.Column="1" Height="25" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Padding="0, 2, 0, 0" FontSize="13"/>
+            <DatePicker x:Name="BDate" Grid.Row="4" Grid.Column="1" Height="25" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" FontSize="13"/>
+            <TextBox x:Name="Phone" Grid.Row="5" Grid.Column="1" Height="25" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Padding="0, 2, 0, 0" FontSize="13"/>
+            <TextBox x:Name="PassportSeries" Grid.Row="6" Grid.Column="1" Height="25" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Padding="0, 2, 0, 0" FontSize="13"/>
+            <TextBox x:Name="PassportNumber" Grid.Row="7" Grid.Column="1" Height="25" Width="200" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5" Padding="0, 2, 0, 0" FontSize="13"/>
+
+            <StackPanel Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="12" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="BtCansel" Content="Отменить" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,5,10,5" IsCancel="True" Click="BtCansel_Click"/>
+                <Button x:Name="BtSave" Content="Сохранить" Height="25" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,5,10,5" IsDefault="True" Click="BtSave_Click"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Window>
